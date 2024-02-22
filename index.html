@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Ivan's Personal Instagram"
+    />
+    <title>ipi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>
+          Ivan's
+          <br />
+          Personal
+          <br />
+          Instagram
+        </h1>
+      </header>
+      <div class="feed" id="feed">
+        
+      </div>
+    </div>
+
+  <script>
+    const posts = [
+      {
+        id: 2,
+        imageUrl: 'posts/2.jpg',
+        location: 'Paris, France',
+        description: 'Second',
+      },
+      {
+        id: 1,
+        imageUrl: 'posts/1.jpg',
+        location: 'Chicago, IL',
+        description: 'First',
+      },
+    ]
+
+    const feedEl = document.getElementById('feed')
+
+    posts.forEach((post) => {
+      const postEl = document.createElement('div')
+      postEl.className = 'post'
+
+      const postHeaderEl = document.createElement('div')
+      postHeaderEl.className = 'post__header'
+
+      const avatarEl = document.createElement('img')
+      avatarEl.src = 'profile.jpg'
+      avatarEl.className = 'post__avatar'
+
+      const postHeaderDetailsEl = document.createElement('div')
+      
+      const usernameEl = document.createElement('a')
+      usernameEl.innerText = 'ivanturianytsia'
+      usernameEl.href = 'https://turianytsia.com'
+      usernameEl.target='_blank'
+      usernameEl.rel='noreferrer'
+
+      const locationEl = document.createElement('div')
+      locationEl.innerText = post.location
+
+      postHeaderDetailsEl.appendChild(usernameEl)
+      postHeaderDetailsEl.appendChild(locationEl)
+
+      postHeaderEl.appendChild(avatarEl)
+      postHeaderEl.appendChild(postHeaderDetailsEl)
+
+      const imgEl = document.createElement('img')
+      imgEl.src = post.imageUrl
+      imgEl.className = 'post__img'
+
+      postEl.appendChild(postHeaderEl)
+      postEl.appendChild(imgEl)
+
+      feedEl.appendChild(postEl)
+    })
+  </script>
+  </body>
+</html>

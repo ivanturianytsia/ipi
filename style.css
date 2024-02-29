@@ -16,6 +16,23 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  transition: 0.2s;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  a {
+    color: #fff;
+  }
+  
+  .post__avatar,
+  .post__carousel {
+    border: solid 2px #fff;
+  }
 }
 
 h1 {
@@ -88,4 +105,8 @@ h1 {
 
 .post__img {
   width: 100%;
+}
+
+a {
+  color: black;
 }

@@ -19,22 +19,6 @@ body {
   transition: 0.2s;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #000;
-    color: #fff;
-  }
-  
-  a {
-    color: #fff;
-  }
-  
-  .post__avatar,
-  .post__carousel {
-    border: solid 2px #fff;
-  }
-}
-
 h1 {
   font-family: "Jacquarda Bastarda 9", serif;
   font-weight: 400;
@@ -109,4 +93,20 @@ h1 {
 
 a {
   color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  a {
+    color: #fff;
+  }
+  
+  .post__avatar,
+  .post__carousel {
+    border: solid 2px #fff;
+  }
 }

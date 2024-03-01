@@ -49,8 +49,6 @@
 
     const feedEl = document.getElementById('feed')
 
-    let scrollTimeout
-
     posts.forEach((post) => {
       const postEl = document.createElement('div')
       postEl.className = 'post'
@@ -81,28 +79,6 @@
 
       const carouselEl = document.createElement('div')
       carouselEl.className = 'post__carousel'
-
-      carouselEl.addEventListener('scroll', (event) => {
-        event.preventDefault()
-        event.stopPropagation()
-
-        if (scrollTimeout) {
-          clearTimeout(scrollTimeout)
-        }
-
-        const scrollLeft = carouselEl.scrollLeft
-        const containerWidth = carouselEl.offsetWidth
-
-        scrollTimeout = setTimeout(() => {
-          const scrollToPost = Math.round(carouselEl.scrollLeft / containerWidth)
-
-          carouselEl.scrollTo({
-            left: scrollToPost * containerWidth,
-            top: 0,
-            behavior: 'smooth'
-          });
-        }, 50)
-      })
 
       post.imageUrls.forEach((imageUrl) => {
         carouselEl.appendChild(createImgEl(imageUrl))
